@@ -1,0 +1,155 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+
+content:
+  - name: music
+    label: 音楽
+    type: file
+    path: data/music.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: 曲名
+        type: string
+        required: true
+      - name: url
+        label: SoundCloud URL
+        type: string
+        required: true
+      - name: track_id
+        label: SoundCloud トラックID（埋め込み用・任意）
+        type: string
+        description: 空欄ならSoundCloudへのリンクのみを表示します。
+      - name: description
+        label: 説明
+        type: text
+      - name: published
+        label: 公開
+        type: boolean
+
+  - name: photos
+    label: 写真・映像
+    type: file
+    path: data/photos.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: タイトル
+        type: string
+        required: true
+      - name: image
+        label: 写真
+        type: image
+      - name: url
+        label: 外部リンク（動画など）
+        type: string
+      - name: description
+        label: 説明
+        type: text
+      - name: published
+        label: 公開
+        type: boolean
+
+  - name: webapps
+    label: Webアプリ
+    type: file
+    path: data/webapps.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: アプリ名
+        type: string
+        required: true
+      - name: url
+        label: 公開URL
+        type: string
+      - name: source
+        label: ソースコードURL
+        type: string
+      - name: image
+        label: サムネイル
+        type: image
+      - name: description
+        label: 説明
+        type: text
+      - name: published
+        label: 公開
+        type: boolean
+
+  - name: games
+    label: ゲーム
+    type: file
+    path: data/games.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: ゲーム名
+        type: string
+        required: true
+      - name: url
+        label: プレイURL
+        type: string
+      - name: source
+        label: ソースコードURL
+        type: string
+      - name: image
+        label: スクリーンショット
+        type: image
+      - name: description
+        label: 説明
+        type: text
+      - name: published
+        label: 公開
+        type: boolean
+
+  - name: news
+    label: お知らせ
+    type: file
+    path: data/news.json
+    format: json
+    list: true
+    fields:
+      - name: date
+        label: 日付（YYYY-MM-DD）
+        type: string
+        required: true
+      - name: title
+        label: 内容
+        type: string
+        required: true
+      - name: url
+        label: 関連URL（任意）
+        type: string
+      - name: published
+        label: 公開
+        type: boolean
+
+  - name: profile
+    label: プロフィール
+    type: file
+    path: data/profile.json
+    format: json
+    fields:
+      - name: name
+        label: 名前
+        type: string
+      - name: birth_year
+        label: 生年
+        type: string
+      - name: origin
+        label: 出身
+        type: string
+      - name: x
+        label: X URL
+        type: string
+      - name: github
+        label: GitHub URL
+        type: string
+      - name: soundcloud
+        label: SoundCloud URL
+        type: string

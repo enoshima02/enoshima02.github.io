@@ -115,3 +115,21 @@ body.menu-page {
     width: 780px;
   }
 }
+
+/* Entries rendered from Pages CMS content files */
+.work-entry {
+  margin: 0 0 28px;
+}
+.work-entry h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+.work-entry iframe {
+  max-width: 100%;
+  border: 0;
+}
+.work-image {
+  display: block;
+  max-width: min(100%, 550px);
+  height: auto;
+}
