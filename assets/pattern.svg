@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="340" height="103" viewBox="0 0 340 103"><rect width="340" height="103" fill="#fff"/><g fill="#caeed8" font-family="Georgia, Times New Roman, serif" font-style="italic" font-size="25" opacity=".72"><text x="2" y="22">enoshima02</text><text x="212" y="22">enoshima02</text><text x="83" y="78">enoshima02</text><text x="300" y="78">enoshima02</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="108" viewBox="0 0 360 108">
+  <rect width="360" height="108" fill="#f8f8f8"/>
+  <text x="48" y="70"
+        fill="#cecaef" opacity="0.74"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic" font-size="47">enoshima02</text>
+</svg>
