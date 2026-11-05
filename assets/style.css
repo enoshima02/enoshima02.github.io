@@ -1,0 +1,37 @@
+/* 1990年代の個人サイトをイメージした軽量なスタイル */
+html { font-size: 14px; }
+body { margin: 0; padding: 0; color: #111; font-family: "ＭＳ Ｐ明朝", "MS PMincho", "Times New Roman", serif; }
+a:link { color: #0000aa; } a:visited { color: #720080; } a:hover { color: #c00000; }
+.menu { background: #f1f1ff; padding: 0; font-size: 12px; font-family: "ＭＳ Ｐゴシック", "MS PGothic", Arial, sans-serif; }
+.nav { padding: 8px 1px 8px 7px; margin: 0; }
+.nav-item { display:flex; align-items:center; gap:3px; white-space:nowrap; margin: 0 0 8px; }
+.nav-item .bullet {font-size:11px; width:8px; line-height:1;}
+.nav-item:nth-child(3n+1) .bullet { color: #9f4ba8; }
+.nav-item:nth-child(3n+2) .bullet { color: #11c571; }
+.nav-item:nth-child(3n) .bullet { color: #2b56db; }
+.nav a {font-size:11px;}
+.paper { min-height: 100vh; background: #fff url("pattern.svg") repeat; }
+.page { padding: 4px 12px 30px; }
+h1 { font-size: 19px; margin: 4px 0 0; text-align:center; font-weight: bold; }
+h2 { font-size: 18px; text-align:center; margin: 10px 0 18px; }
+.start {display: grid; grid-template-columns: 120px minmax(280px, 1fr); gap: 14px; max-width: 780px; margin: 0 auto; }
+.profile { padding-top: 23px; font-size: 11px; }
+.portrait {display:block; width:108px; height:138px; border:0; object-fit:cover; margin-bottom:5px;}
+.profile p { margin: 2px 0; line-height:1.35; }
+.news { padding:0 2px; }
+.news-head { text-align:center; margin: 20px auto 7px; font-size:14px; font-weight:bold; }
+.news hr {border:0; border-top:1px solid #bbb; margin:0 0 8px;}
+.news ul { padding:0; margin: 0 0 12px; list-style:none; }
+.news li { margin:3px 0; line-height: 1.38; }
+.news .label { color: #333; }
+.news .new {color:red; font-weight:bold;}
+.small {font-size:11px;}
+.notice {margin-top:23px; font-size: 11px; line-height:1.5;}
+.section { max-width: 820px; margin: 0 auto; }
+.section .body {padding:0 8px;}
+.section p {line-height:1.55;}
+table.classic { border-collapse:collapse; width:100%; max-width:750px; background:rgba(255,255,255,.65); font-size: 13px; }
+table.classic th, table.classic td {border:1px solid #888; padding:4px 6px; text-align:left;}
+table.classic th {font-weight:normal; background:#f0f0f0;}
+.back {text-align:center; margin-top:25px;}
+@media (max-width: 520px) { .page {padding:8px;} .start {grid-template-columns:100px minmax(170px,1fr);gap:8px;} .portrait {width:95px;height:121px;} h1 {font-size:17px;} .news-head {margin-top:15px;} }
