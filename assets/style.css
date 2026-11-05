@@ -2,14 +2,14 @@
 html { font-size: 14px; }
 body { margin: 0; padding: 0; color: #111; font-family: "ＭＳ Ｐ明朝", "MS PMincho", "Times New Roman", serif; }
 a:link { color: #0000aa; } a:visited { color: #720080; } a:hover { color: #c00000; }
-.menu { background: #f1f1ff; padding: 0; font-size: 12px; font-family: "ＭＳ Ｐゴシック", "MS PGothic", Arial, sans-serif; }
-.nav { padding: 8px 1px 8px 7px; margin: 0; }
-.nav-item { display:flex; align-items:center; gap:3px; white-space:nowrap; margin: 0 0 8px; }
-.nav-item .bullet {font-size:11px; width:8px; line-height:1;}
+.menu { background: #f1f1ff; padding: 0; font-size: 14px; font-family: "ＭＳ Ｐゴシック", "MS PGothic", Arial, sans-serif; }
+.nav { padding: 53px 8px 12px 20px; margin: 0; }
+.nav-item { display:flex; align-items:center; gap:5px; white-space:nowrap; min-height: 20px; margin: 0 0 30px; }
+.nav-item .bullet {font-size:13px; width:13px; flex:0 0 13px; line-height:1;}
 .nav-item:nth-child(3n+1) .bullet { color: #9f4ba8; }
 .nav-item:nth-child(3n+2) .bullet { color: #11c571; }
 .nav-item:nth-child(3n) .bullet { color: #2b56db; }
-.nav a {font-size:11px;}
+.nav a {font-size:14px;}
 .paper { min-height: 100vh; background: #fff url("pattern.svg") repeat; }
 .page { padding: 4px 12px 30px; }
 h1 { font-size: 19px; margin: 4px 0 0; text-align:center; font-weight: bold; }
