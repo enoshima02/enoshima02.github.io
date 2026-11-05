@@ -64,13 +64,25 @@
         section.append(frame);
       }
       const a = link(item.url, "SoundCloudで開く");
-      if (a) section.append(node("p")).append(a);
+      if (a) {
+        const p = node("p");
+        p.append(a);
+        section.append(p);
+      }
     } else {
       addMedia(section, item.image, item.title);
       const external = link(item.url, type === "games" ? "ゲームをプレイ" : "作品を見る");
-      if (external) section.append(node("p")).append(external);
+      if (external) {
+        const p = node("p");
+        p.append(external);
+        section.append(p);
+      }
       const source = link(item.source, "ソースコード");
-      if (source) section.append(node("p")).append(source);
+      if (source) {
+        const p = node("p");
+        p.append(source);
+        section.append(p);
+      }
     }
     appendDescription(section, item.description);
     return section;
@@ -87,7 +99,11 @@
       }
       for (const [key, label] of [["x", "X"], ["github", "GitHub"], ["soundcloud", "SoundCloud"]]) {
         const a = link(data[key], label);
-        if (a) root.append(node("p")).append(a);
+        if (a) {
+          const p = node("p");
+          p.append(a);
+          root.append(p);
+        }
       }
       return;
     }
