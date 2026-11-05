@@ -1,16 +1,15 @@
-/* 元サイトの標準的なHTML表示を優先した軽量な追加スタイル。 */
-body.paper { background:#fff url("pattern.svg") repeat; color:#000; font-family: "Times New Roman", serif; font-size:16px; }
+/* ブラウザ標準の字体と見出しサイズを活かす。 */
+body.paper { background:#fff url("pattern.svg") repeat; color:#000; font-family: Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif; font-size:16px; }
 body.top-page { margin:8px; }
-.home-table { border-spacing:2px; }
+.home-table { margin-left:18px; margin-right:8px; width:calc(100% - 26px); table-layout:fixed; border-spacing:2px; }
 .home-profile { width:350px; vertical-align:top; }
-.home-profile img { width:350px; height:414px; display:inline-block; object-fit:cover; }
+.home-profile img { width:350px; height:414px; display:block; object-fit:cover; }
 .bio-table { width:256px; }
-.home-news-title { min-width:380px; height:38px; }
-.home-news { width:440px; vertical-align:top; }
-.home-news hr { border:0; border-top:1px solid #888; }
+.home-news-title { height:38px; }
+.home-news { vertical-align:top; font-weight:bold; }
+.home-news hr { border:0; border-top:1px solid #aaa; }
 .home-news p { margin:12px 0; }
 .note { font-size:13px; line-height:1.5; margin-top:38px!important; }
-/* 個別ページも標準の見出し・本文サイズに合わせる。 */
 body.paper:not(.top-page) { margin:8px; }
 .page { padding:14px 12px 30px; }
 .section { max-width:820px; margin:0 auto; }
@@ -22,4 +21,4 @@ body.paper:not(.top-page) { margin:8px; }
 .classic th { background:transparent; }
 .small {font-size:13px; font-weight:normal;}
 .back { text-align:center; margin-top:30px; }
-@media(max-width:900px){.home-news-title{min-width:250px}.home-news{width:300px}.home-table {max-width:100%;}}
+@media(max-width:780px){.home-table{width:780px;table-layout:fixed;}}
