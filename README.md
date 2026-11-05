@@ -1,20 +1,25 @@
-# enoshima02のホームページ
+# enoshima02.github.io
 
-1990年代風の個人ホームページ。阿部寛さんの有名なホームページの「軽量なフレームサイト」という特徴を参考にした非公式オマージュであり、公式サイトとは無関係です。既存サイトの写真・文章・画像は転載していません。
+個人制作物の公開サイト。
 
-## 公開
-GitHub Pages: https://enoshima02.github.io/
+## 構成
 
-GitHub → Settings → Pages → Deploy from a branch → main → /(root) を選択する。
+- `index.html`: 2フレーム構成
+- `menu.html`: 左メニュー
+- `top.html`: トップページ
+- `works.html`, `making.html`, `music.html`, `visual.html`, `log.html`: 個別ページ
+- `about.html`: プロフィール（内容検討中）
+- `english.html`: 英語ページ
+- `assets/style.css`: 共通スタイル
+- `assets/pattern.svg`: 背景画像
+- `assets/enoshima.jpg`: トップ写真
+
+## 公開方法
+
+GitHub Pagesを `main` ブランチのルートに設定する。
 
 ## 編集方法
-- トップページ・最新情報：`top.html`
-- 左メニュー：`menu.html`
-- 制作物一覧：`works.html`
-- 制作中：`making.html`
-- 自己紹介：`about.html`
-- イラスト：`assets/portrait.svg`
-- 背景：`assets/pattern.svg`
-- 共通CSS：`assets/style.css`
 
-昔の雰囲気を再現するため `frameset` を使っている。HTML5では廃止された要素なので、アクセシビリティ等を重視する場合はCSS Gridへの移行を検討する。
+メニューは `menu.html`、トップの最新情報は `top.html` を編集する。共通の見た目は `assets/style.css` で調整する。
+
+`frameset` は旧式のHTML要素だが、レトロな見た目を維持するため採用している。新しいコードでは2スペースインデントを使用する。
