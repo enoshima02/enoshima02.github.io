@@ -2,6 +2,8 @@
 
 個人制作物の公開サイト。
 
+https://enoshima02.github.io
+
 ## 構成
 
 - `index.html`: 2フレーム構成
