@@ -7,7 +7,7 @@
 1. https://app.pagescms.org/ を開き、GitHubでログイン。
 2. GitHub Appを `enoshima02/enoshima02.github.io` にインストールする（リポジトリへの権限付与は本人の操作が必要）。
 3. `main` ブランチを選ぶ。
-4. 「音楽」「写真・映像」「Webアプリ」「ゲーム」「お知らせ」「プロフィール」を編集して保存する。
+4. 「音楽」「Webアプリ」「ゲーム」「お知らせ」「プロフィール」を編集して保存する。
 5. GitHub Pagesへのデプロイ完了後、公開サイトを確認する。
 
 管理フォームはルートの `.pages.yml` で定義している。
@@ -15,12 +15,10 @@
 ## データの場所
 
 - `data/music.json`：楽曲名・SoundCloud URL・トラックID
-- `data/photos.json`：写真／動画リンク
 - `data/webapps.json`：Webアプリ
 - `data/games.json`：ゲーム
 - `data/news.json`：トップのお知らせ
 - `data/profile.json`：プロフィール
-- `assets/uploads/`：Pages CMSからアップロードした画像
 - `assets/content.js`：上記JSONを読み込んで表示する共通処理
 
 編集データは公開されるため、非公開情報を入力しないこと。各作品の `published` を false にするとサイトには表示されないが、公開GitHubリポジトリ内のJSONからは閲覧可能。

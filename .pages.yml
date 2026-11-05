@@ -29,30 +29,6 @@ content:
         label: 公開
         type: boolean
 
-  - name: photos
-    label: 写真・映像
-    type: file
-    path: data/photos.json
-    format: json
-    list: true
-    fields:
-      - name: title
-        label: タイトル
-        type: string
-        required: true
-      - name: image
-        label: 写真
-        type: image
-      - name: url
-        label: 外部リンク（動画など）
-        type: string
-      - name: description
-        label: 説明
-        type: text
-      - name: published
-        label: 公開
-        type: boolean
-
   - name: webapps
     label: Webアプリ
     type: file

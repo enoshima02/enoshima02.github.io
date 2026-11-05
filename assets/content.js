@@ -6,7 +6,7 @@
   if (!root) return;
 
   const category = root.dataset.content;
-  const allowed = new Set(["music", "photos", "webapps", "games", "news", "profile"]);
+  const allowed = new Set(["music", "webapps", "games", "news", "profile"]);
   if (!allowed.has(category)) return;
 
   const node = (tag, text, className) => {
