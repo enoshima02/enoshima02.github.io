@@ -58,6 +58,10 @@ content:
         label: 内容
         type: string
         required: true
+      - name: body
+        label: 本文（自由入力・任意）
+        type: text
+        description: 複数行の文章を入力できます。空欄でも公開できます。
       - name: url
         label: 関連URL（任意）
         type: string
