@@ -133,3 +133,9 @@ body.menu-page {
   max-width: min(100%, 550px);
   height: auto;
 }
+
+/* Align the recent works table with the homepage section heading. */
+.top-page .classic {
+  margin-left: 0;
+  margin-right: auto;
+}
