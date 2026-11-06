@@ -2,12 +2,7 @@
 (() => {
   "use strict";
 
-  const root = document.querySelector("[data-content]");
-  if (!root) return;
-
-  const category = root.dataset.content;
-  const allowed = new Set(["music", "webapps", "games", "news", "profile", "works"]);
-  if (!allowed.has(category)) return;
+  const allowed = new Set(["music", "webapps", "games", "news", "profile", "works", "works-latest"]);
 
   const node = (tag, text, className) => {
     const element = document.createElement(tag);
@@ -88,7 +83,7 @@
     return section;
   };
 
-  function render(data) {
+  function render(root, category, data) {
     root.replaceChildren();
     if (category === "profile") {
       const entries = [
@@ -109,7 +104,7 @@
       return;
     }
     if (!Array.isArray(data)) throw new Error("Invalid content format");
-    if (category === "works") {
+    if (category === "works" || category === "works-latest") {
       const items = data.filter(item => item && item.published !== false);
       items.sort((a, b) => {
         const da = /^\d{4}-\d{2}-\d{2}$/.test(a.date || "") ? a.date : "";
@@ -128,7 +123,7 @@
       thead.append(headRow);
       table.append(thead);
       const tbody = node("tbody");
-      for (const item of items) {
+      for (const item of category === "works-latest" ? items.slice(0, 5) : items) {
         const row = node("tr");
         row.append(node("td", item.date || "—"));
         row.append(node("td", categories[item.category] || "その他"));
@@ -154,7 +149,14 @@
     }
     for (const item of entries) {
       if (category === "news") {
-        const p = node("p", [item.date, item.title].filter(Boolean).join("　"));
+        const p = node("p");
+        p.append(node("strong", [item.date, item.title].filter(Boolean).join("　")));
+        if (item.body) {
+          const body = node("span");
+          body.style.whiteSpace = "pre-line";
+          body.append(document.createTextNode("\n" + item.body));
+          p.append(body);
+        }
         const a = link(item.url, "詳細");
         if (a) { p.append(" "); p.append(a); }
         root.append(p);
@@ -164,14 +166,19 @@
     }
   }
 
-  fetch("data/" + category + ".json", { cache: "no-cache" })
-    .then(response => {
-      if (!response.ok) throw new Error("HTTP " + response.status);
-      return response.json();
-    })
-    .then(render)
-    .catch(error => {
-      console.error("Content could not be loaded:", error);
-      root.replaceChildren(node("p", "コンテンツを読み込めませんでした。"));
-    });
+  for (const root of document.querySelectorAll("[data-content]")) {
+    const category = root.dataset.content;
+    if (!allowed.has(category)) continue;
+    const fileCategory = category === "works-latest" ? "works" : category;
+    fetch("data/" + fileCategory + ".json", { cache: "no-cache" })
+      .then(response => {
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        return response.json();
+      })
+      .then(data => render(root, category, data))
+      .catch(error => {
+        console.error("Content could not be loaded:", error);
+        root.replaceChildren(node("p", "コンテンツを読み込めませんでした。"));
+      });
+  }
 })();
