@@ -150,7 +150,7 @@
     for (const item of entries) {
       if (category === "news") {
         const p = node("p");
-        p.append(node("strong", [item.date, item.title].filter(Boolean).join("　")));
+        p.append(node("span", [item.date, item.title].filter(Boolean).join("　")));
         if (item.body) {
           const body = node("span");
           body.style.whiteSpace = "pre-line";
