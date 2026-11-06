@@ -86,11 +86,10 @@
   function render(root, category, data) {
     root.replaceChildren();
     if (category === "profile") {
-      const entries = [
-        ["name", ""], ["birth_year", "年生まれ"], ["origin", "出身"]
-      ];
-      for (const [key, suffix] of entries) {
-        if (data[key]) root.append(node("p", data[key] + suffix));
+      if (data.bio) {
+        const bio = node("p", data.bio);
+        bio.style.whiteSpace = "pre-line";
+        root.append(bio);
       }
       const links = Array.isArray(data.links) ? data.links : [];
       for (const item of links) {
