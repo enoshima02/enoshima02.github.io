@@ -20,13 +20,13 @@ content:
         required: true
         options:
           values:
-            - value: music
+            - name: music
               label: 音楽
-            - value: game
+            - name: game
               label: ゲーム
-            - value: article
+            - name: article
               label: 記事
-            - value: other
+            - name: other
               label: その他
       - name: date
         label: 公開日（YYYY-MM-DD、不明なら空欄）
