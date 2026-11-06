@@ -75,15 +75,10 @@ content:
     path: data/profile.json
     format: json
     fields:
-      - name: name
-        label: 名前
-        type: string
-      - name: birth_year
-        label: 生年
-        type: string
-      - name: origin
-        label: 出身
-        type: string
+      - name: bio
+        label: 自己紹介
+        type: text
+        description: 自由に文章を入力できます。改行も表示に反映されます。
       - name: links
         label: 外部リンク
         type: object
