@@ -6,7 +6,7 @@
   if (!root) return;
 
   const category = root.dataset.content;
-  const allowed = new Set(["music", "webapps", "games", "news", "profile"]);
+  const allowed = new Set(["music", "webapps", "games", "news", "profile", "works"]);
   if (!allowed.has(category)) return;
 
   const node = (tag, text, className) => {
@@ -97,8 +97,9 @@
       for (const [key, suffix] of entries) {
         if (data[key]) root.append(node("p", data[key] + suffix));
       }
-      for (const [key, label] of [["x", "X"], ["github", "GitHub"], ["soundcloud", "SoundCloud"]]) {
-        const a = link(data[key], label);
+      const links = Array.isArray(data.links) ? data.links : [];
+      for (const item of links) {
+        const a = link(item.url, item.label || item.url);
         if (a) {
           const p = node("p");
           p.append(a);
@@ -108,6 +109,43 @@
       return;
     }
     if (!Array.isArray(data)) throw new Error("Invalid content format");
+    if (category === "works") {
+      const items = data.filter(item => item && item.published !== false);
+      items.sort((a, b) => {
+        const da = /^\\d{4}-\\d{2}-\\d{2}$/.test(a.date || "") ? a.date : "";
+        const db = /^\\d{4}-\\d{2}-\\d{2}$/.test(b.date || "") ? b.date : "";
+        return db.localeCompare(da);
+      });
+      if (!items.length) {
+        root.append(node("p", "現在、公開中の制作物はありません。"));
+        return;
+      }
+      const categories = {music: "音楽", game: "ゲーム", article: "記事", other: "その他"};
+      const table = node("table", null, "classic");
+      const thead = node("thead");
+      const headRow = node("tr");
+      for (const label of ["公開日", "ジャンル", "制作物"]) headRow.append(node("th", label));
+      thead.append(headRow);
+      table.append(thead);
+      const tbody = node("tbody");
+      for (const item of items) {
+        const row = node("tr");
+        row.append(node("td", item.date || "—"));
+        row.append(node("td", categories[item.category] || "その他"));
+        const cell = node("td");
+        const a = link(item.url, item.title || "無題");
+        if (a) cell.append(a);
+        else cell.append(node("span", item.title || "無題"));
+        if (item.description) {
+          cell.append(node("div", item.description, "small"));
+        }
+        row.append(cell);
+        tbody.append(row);
+      }
+      table.append(tbody);
+      root.append(table);
+      return;
+    }
     const entries = data.filter(item => item && item.published !== false);
     if (category === "news") entries.sort((a, b) => String(b.date).localeCompare(String(a.date)));
     if (!entries.length) {
