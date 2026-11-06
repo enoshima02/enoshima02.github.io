@@ -112,8 +112,8 @@
     if (category === "works") {
       const items = data.filter(item => item && item.published !== false);
       items.sort((a, b) => {
-        const da = /^\\d{4}-\\d{2}-\\d{2}$/.test(a.date || "") ? a.date : "";
-        const db = /^\\d{4}-\\d{2}-\\d{2}$/.test(b.date || "") ? b.date : "";
+        const da = /^\d{4}-\d{2}-\d{2}$/.test(a.date || "") ? a.date : "";
+        const db = /^\d{4}-\d{2}-\d{2}$/.test(b.date || "") ? b.date : "";
         return db.localeCompare(da);
       });
       if (!items.length) {
