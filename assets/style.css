@@ -142,3 +142,8 @@ body.menu-page {
   margin-left: 0;
   margin-right: auto;
 }
+
+/* Indent news entries slightly, following the original retro homepage layout. */
+.top-page [data-content="news"] {
+  margin-left: 28px;
+}
