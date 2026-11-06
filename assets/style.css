@@ -55,7 +55,7 @@ body.menu-page {
 }
 .home-news {
   vertical-align: top;
-  font-weight: normal;
+  font-weight: bold;
 }
 .home-news > p > strong {
   font-weight: bold;
