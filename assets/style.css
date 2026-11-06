@@ -147,3 +147,8 @@ body.menu-page {
 .top-page [data-content="news"] {
   margin-left: 28px;
 }
+
+/* Match the recent works table indent to the news entries. */
+.top-page [data-content="works-latest"] {
+  margin-left: 28px;
+}
