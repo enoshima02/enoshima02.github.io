@@ -157,8 +157,6 @@
           body.append(document.createTextNode("\n" + item.body));
           p.append(body);
         }
-        const a = link(item.url, "詳細");
-        if (a) { p.append(" "); p.append(a); }
         root.append(p);
       } else {
         root.append(renderItem(item, category));
