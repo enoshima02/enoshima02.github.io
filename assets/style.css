@@ -55,6 +55,9 @@ body.menu-page {
 }
 .home-news {
   vertical-align: top;
+  font-weight: normal;
+}
+.home-news > p > strong {
   font-weight: bold;
 }
 .home-news hr {
